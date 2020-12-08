@@ -5,22 +5,24 @@ import org.teavm.flavour.widgets.ApplicationTemplate;
 
 @BindTemplate("templates/landingPage.html")
 public class LandingPage extends ApplicationTemplate {
-    private String userName = "";
+
+    private String nebulaID = "";
 
     public static void main(String[] args) {
        LandingPage landingPage = new LandingPage();
        landingPage.bind("application-content");
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public void next() {
         System.out.println("New Nebula");
+    }
+
+    public String getNebulaID() {
+        System.out.println(nebulaID);
+        return nebulaID;
+    }
+
+    public void setNebulaID(String nebulaID) {
+        this.nebulaID = nebulaID;
     }
 }
