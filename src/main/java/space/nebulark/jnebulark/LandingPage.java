@@ -19,4 +19,8 @@ public class LandingPage extends ApplicationTemplate {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    public void next() {
+        System.out.println("New Nebula");
+    }
 }
