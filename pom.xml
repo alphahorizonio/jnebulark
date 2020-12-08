@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>space.nebulark.jnebulark</groupId>
@@ -38,7 +36,7 @@
       <groupId>org.teavm</groupId>
       <artifactId>teavm-jso-apis</artifactId>
       <version>0.6.1</version>
-    </dependency>    
+    </dependency>
     <dependency>
       <groupId>org.teavm.flavour</groupId>
       <artifactId>teavm-flavour-widgets</artifactId>
@@ -62,7 +60,7 @@
     </dependency>
   </dependencies>
 
-   <repositories>
+  <repositories>
     <repository>
       <id>central</id>
       <name>Maven Central</name>
@@ -84,12 +82,12 @@
       <url>https://repo1.maven.org/maven2</url>
     </pluginRepository>
 
-       <pluginRepository>
+    <pluginRepository>
       <id>teavm-dev</id>
       <url>https://dl.bintray.com/konsoletyper/teavm</url>
     </pluginRepository>
   </pluginRepositories>
-  
+
   <build>
     <plugins>
       <plugin>
@@ -108,6 +106,9 @@
           <webResources>
             <resource>
               <directory>${project.build.directory}/generated/js</directory>
+            </resource>
+            <resource>
+              <directory>${project.build.directory}/classes</directory>
             </resource>
           </webResources>
         </configuration>
