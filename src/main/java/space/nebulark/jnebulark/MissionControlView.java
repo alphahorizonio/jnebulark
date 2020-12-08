@@ -6,11 +6,5 @@ import org.teavm.flavour.widgets.ApplicationTemplate;
 
 @BindTemplate("templates/missionControl.html")
 public class MissionControlView {
-    private String nebulaId;
-
-    public MissionControlView(String nebulaId) {
-        this.nebulaId = nebulaId;
-    }
-
-
+    
 }

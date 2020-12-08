@@ -22,7 +22,7 @@ public class Client extends ApplicationTemplate implements IRoute {
     }
 
     @Override
-    public void missionControl(String nebulaId) {
-        setView(new MissionControlView(nebulaId));
+    public void missionControl() {
+        setView(new MissionControlView());
     }
 }

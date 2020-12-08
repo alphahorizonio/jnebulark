@@ -10,6 +10,6 @@ public interface IRoute extends Route {
     @Path("/")
     void index();
     
-    @Path("/missionControl/{nebulaId}")
-    void missionControl(@PathParameter("nebulaId") String nebulaID);
+    @Path("/missionControl")
+    void missionControl();
 }
