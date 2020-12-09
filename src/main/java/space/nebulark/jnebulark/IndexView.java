@@ -1,7 +1,6 @@
 package space.nebulark.jnebulark;
 
 import org.teavm.flavour.templates.BindTemplate;
-import org.teavm.flavour.widgets.ApplicationTemplate;
 
 @BindTemplate("templates/index.html")
 public class IndexView {
