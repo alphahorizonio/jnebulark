@@ -10,6 +10,7 @@
   <!-- ... -->
   <body class="min-h-screen bg-indigo-300">
     <!-- ... -->
+
     <div
       class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
     >
@@ -26,17 +27,53 @@
           >
             woody-wood-wood
           </div>
-          <a
-            class="block mt-1 text-lg leading-tight font-medium text-black"
+          <a class="block mt-1 text-lg leading-tight font-medium text-black"
             >Share this QR-Code with your friends! After that, they will be able
             to run a spark for you!</a
           >
-            <button
-              class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 mt-8"
-            >
-              Copy code</button
-            >
+          <button
+            class="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 mt-8"
+          >
+            Copy code
+          </button>
         </div>
+      </div>
+    </div>
+
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md md:max-w-2xl">
+      <div class="mx-4 my-4">
+        <div
+          class="uppercase tracking-wide text-sm text-indigo-500 font-semibold text-2xl"
+        >
+          Spark
+        </div>
+
+        <form>
+          <div
+            class="uppercase tracking-wide text-sm text-indigo-500 font-semibold text-1xl"
+          >
+            Upload Binary
+          </div>
+
+          <input type="file" name="filename" />
+          <div
+            class="uppercase tracking-wide text-sm text-indigo-500 font-semibold text-1xl"
+          >
+            Upload JSON or enter below
+          </div>
+
+          <input type="file" name="filename" />
+          <textarea
+            class="my-1.5 resize-none border rounded-md w-full h-36"
+          ></textarea>
+          <div class="text-right">
+            <input
+            type="submit"
+            class="w-36 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 mb-4"
+          />
+          </div>
+          
+        </form>
       </div>
     </div>
   </body>
