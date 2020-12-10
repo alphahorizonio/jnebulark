@@ -2,7 +2,7 @@ package space.nebulark.jnebulark;
 
 import org.teavm.flavour.templates.BindTemplate;
 
-@BindTemplate("templates/missionControl.html")
+@BindTemplate("templates/dashboard.html")
 public class DashboardView {
     
 }
