@@ -11,4 +11,7 @@ public interface IRoute extends Route {
     
     @Path("/missionControl")
     void missionControl();
+
+    @Path("/dashboard")
+    void dashboard();
 }

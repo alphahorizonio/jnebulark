@@ -25,4 +25,9 @@ public class Client extends ApplicationTemplate implements IRoute {
     public void missionControl() {
         setView(new MissionControlView());
     }
+
+    @Override
+    public void dashboard() {
+        setView(new DashboardView());
+    }
 }
