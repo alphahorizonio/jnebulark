@@ -148,7 +148,7 @@
           class="grid grid-cols-6 gap-4 border-blue-700 h-9 py-2 w-full justify-items-center"
         >
           <div class=""><i class="fas fa-check text-green-500"></i>️</div>
-          <div class="">4a4d06c2</div>
+          <div class=""><code>4a4d06c2</code></div>
           <div class="">7 Ions</div>
           <div class="col-span-2">Today at 4:14 PM</div>
           <div class="">
@@ -164,13 +164,62 @@
         </div>
 
         <div
-          id="accordion"
-          class="border my-2 text-gray-700"
+          class="my-2 text-gray-700"
           attr:style="'display: ' + (visible ? 'none' : 'block')"
         >
-          This is an example of tailwind css collapse with alpine js and
-          tailwindcss. This collapse is toggle by either the above button or a
-          href anochor tags.
+          <div>
+          <div
+          class="pb-2 tracking-wide text-sm text-black font-semibold text-2xl"
+        >
+          Output
+        </div>
+        <div class="flex justify-end">
+            <div class="text-right pr-2">
+          <label
+            class="py-0.5 my-2.5 px-2 w-18 h-6 text-xs text-blue-700 font-semibold focus:outline-none focus:ring focus:border-blue-200 rounded shadow-md border border-blue-700 bg-white rounded-md cursor-pointer"
+          >
+            <button class="focus:outline-none text-center w-20 h-6">📥 Download</button>
+          </label>
+        </div>
+        <div class="text-right">
+          <label
+            class="py-0.5 my-2.5 px-2 w-18 h-6 text-xs text-blue-700 font-semibold focus:outline-none focus:ring focus:border-blue-200 rounded shadow-md border border-blue-700 bg-white rounded-md cursor-pointer"
+          >
+            <button class="focus:outline-none text-center w-20 h-6">📋 Copy Code</button>
+          </label>
+        </div>
+        </div>
+          <textarea
+            class="my-0.5 resize-none border rounded-md w-full h-36"
+            placeholder=' e.g. {"name": "John"}'
+          ></textarea>
+          <div
+          class="pb-2 tracking-wide text-sm text-black font-semibold text-2xl"
+        >
+          Logs
+        </div>
+        <div class="flex justify-end">
+            <div class="text-right pr-2">
+          <label
+            class="py-0.5 my-2.5 px-2 w-18 h-6 text-xs text-blue-700 font-semibold focus:outline-none focus:ring focus:border-blue-200 rounded shadow-md border border-blue-700 bg-white rounded-md cursor-pointer"
+          >
+            <button class="focus:outline-none text-center w-20 h-6">📥 Download</button>
+          </label>
+        </div>
+        <div class="text-right">
+          <label
+            class="py-0.5 my-2.5 px-2 w-18 h-6 text-xs text-blue-700 font-semibold focus:outline-none focus:ring focus:border-blue-200 rounded shadow-md border border-blue-700 bg-white rounded-md cursor-pointer"
+          >
+            <button class="focus:outline-none text-center w-20 h-6">📋 Copy Code</button>
+          </label>
+        </div>
+        </div>
+        
+          <textarea
+            class="my-0.5 resize-none border rounded-md w-full h-36"
+            placeholder=' e.g. {"name": "John"}'
+          ></textarea>
+        </div>
         </div>
       </div>
     </div>
