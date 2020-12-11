@@ -7,38 +7,25 @@
   </head>
   
   <div
-    class="min-h-screen bg-indigo-300 py-6 flex flex-col justify-center sm:py-12"
+    class="min-h-screen bg-white py-6 flex flex-col justify-center sm:py-12"
   >
     <div class="relative py-3 sm:max-w-xl sm:mx-auto">
-      <div
-      class="absolute bg-indigo-500 inset-0 bg-gradient-to-r from-cyan-400 to-light-blue-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"
-      ></div>
-      <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+      <div class="relative px-3 py-3 bg-white shadow-2xl sm:rounded-3xl sm:p-20">
         <div class="max-w-md mx-auto">
           <div class="max-w-md mx-auto">
             <img src="../img/nebulark-icon.png" class="max-w-md mx-auto" />
           </div>
-          <div class="divide-y divide-gray-200">
             <div
-              class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
+              class="pt-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7"
             >
-              <p>
-                Nebulark is a distributed computing system for the browser built
-                on WebAssembly for compute, WebRTC for networking and IPFS for
-                storage.
-              </p>
-              <p>
-                Click on the button below to generate a new Nebula
-              </p>
-              <button class="max-w-md mx-auto bg-green-500 w-full text-white" event:click="next()">New Nebula</button>
+              <button class="max-w-md mx-auto bg-blue-700 rounded-lg w-full text-white" event:click="next()">New Nebula</button>
             </div>
+            <div class="py-2 text-center text-blue-700 opacity-70">OR</div>
             <div
-              class="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7"
+              class="text-base leading-6 font-bold sm:text-lg sm:leading-7"
             >
-              <p>Paste the key below</p>
-              <input class="max-w-md w-full mx-auto border-2" type="text" html:change="nebulaID" html:value="nebulaID" placeholder="Got a key? Type it here!"></input>
+              <input class="max-w-md rounded-lg w-full mx-auto border-2" type="text" html:change="nebulaID" html:value="nebulaID" placeholder=" Got a key? Type it here!"></input>
             </div>
-          </div>
         </div>
       </div>
     </div>
