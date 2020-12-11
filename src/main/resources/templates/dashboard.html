@@ -21,7 +21,7 @@
                   >
                 </div>
                 <div class="flex justify-center my-1">
-                  <span class="block text-2xs font-semibold">Ram</span>
+                  <span class="block text-xs">Ram</span>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@
                   >
                 </div>
                 <div class="flex justify-center my-1">
-                  <span class="block text-2xs font-semibold">Cores</span>
+                  <span class="block text-xs">Cores</span>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@
                   >
                 </div>
                 <div class="flex justify-center my-1">
-                  <span class="block text-2xs font-semibold">Disk</span>
+                  <span class="block text-xs">Disk</span>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@
         <div
           class="grid grid-cols-6 gap-4 border-blue-700 h-9 py-2 w-full justify-items-center"
         >
-          <div class=""><i class="fas fa-check"></i>️</div>
+          <div class=""><i class="fas fa-check text-green-500"></i>️</div>
           <div class="">4a4d06c2</div>
           <div class="">7 Ions</div>
           <div class="col-span-2">Today at 4:14 PM</div>
@@ -157,7 +157,8 @@
                 class="focus:outline-none w-5 h-5"
                 event:click="visible()"
               >
-                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-right" attr:style="'display: ' + (visible ? 'block' : 'none')"></i>
+                <i class="fas fa-chevron-down" attr:style="'display: ' + (visible ? 'none' : 'block')"></i>
               </button>
             </label>
           </div>
@@ -166,7 +167,7 @@
         <div
           id="accordion"
           class="border my-2 text-gray-700"
-          attr:style="'display: ' + (visible ? 'block' : 'none')"
+          attr:style="'display: ' + (visible ? 'none' : 'block')"
         >
           This is an example of tailwind css collapse with alpine js and
           tailwindcss. This collapse is toggle by either the above button or a
