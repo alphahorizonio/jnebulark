@@ -157,8 +157,7 @@
                 class="focus:outline-none w-5 h-5"
                 event:click="visible()"
               >
-                <i class="fas fa-chevron-right" attr:style="'display: ' + (visible ? 'block' : 'none')"></i>
-                <i class="fas fa-chevron-down" attr:style="'display: ' + (visible ? 'none' : 'block')"></i>
+                <i class="transition-all fas fa-chevron-right" attr:style="'transform: ' + (visible ? 'rotate(0deg)' : 'rotate(90deg)')"></i>
               </button>
             </label>
           </div>
