@@ -153,14 +153,14 @@
               <div class="col-span-2">Today at 4:14 PM</div>
               <div class="">
                 <label>
-                  <button class="focus:outline-none w-5 h-5">
+                  <button class="focus:outline-none w-5 h-5" event:click="visible()">
                     <i class="fas fa-chevron-down"></i>
                   </button>
                 </label>
               </div>
             </div>
 
-            <div class="border my-2 text-gray-700">
+            <div id="accordion" class="border my-2 text-gray-700" attr:style="'display: ' + (visible ? 'block' : 'none')">
               This is an example of tailwind css collapse with alpine js and
               tailwindcss. This collapse is toggle by either the above button or
               a href anochor tags.
