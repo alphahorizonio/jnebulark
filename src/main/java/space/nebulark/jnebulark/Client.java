@@ -30,4 +30,9 @@ public class Client extends ApplicationTemplate implements IRoute {
     public void dashboard() {
         setView(new DashboardView());
     }
+
+    @Override 
+    public void sparkDetails() {
+        setView(new SparkDetails());
+    }
 }

@@ -14,4 +14,7 @@ public interface IRoute extends Route {
 
     @Path("/dashboard")
     void dashboard();
+
+    @Path("/sparkDetails")
+    void sparkDetails();
 }
