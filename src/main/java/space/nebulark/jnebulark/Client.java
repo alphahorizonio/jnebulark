@@ -33,6 +33,11 @@ public class Client extends ApplicationTemplate implements IRoute {
 
     @Override 
     public void sparkDetails() {
-        setView(new SparkDetails());
+        setView(new SparkDetailsView());
+    }
+
+    @Override
+    public void recentSparkDetails() {
+        setView(new RecentSparkDetailsView());
     }
 }

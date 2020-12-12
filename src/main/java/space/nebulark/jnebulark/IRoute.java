@@ -17,4 +17,7 @@ public interface IRoute extends Route {
 
     @Path("/sparkDetails")
     void sparkDetails();
+
+    @Path("/recentSparkDetails")
+    void recentSparkDetails();
 }
