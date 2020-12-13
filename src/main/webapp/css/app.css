@@ -49,3 +49,8 @@ input {
 .dropdown:focus .dropdown-content {
   display: block;
 }
+
+.dropdown:focus {
+  display: block;
+}
+    
