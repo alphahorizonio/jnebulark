@@ -1,6 +1,6 @@
-<div class="relative sm:max-w-xl sm:mx-auto">
+<div class="relative sm:max-w-xl sm:mx-auto" >
   <div
-    class="h-48 max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden md:max-w-2xl"
+    class="h-48 max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden md:max-w-2xl" event:click="invisible()"
   >
     <div class="sm:mx-auto md:flex h-48">
       <div class="p-4 w-full h-48">
@@ -68,7 +68,7 @@
   </div>
 
   <div
-    class="mt-4 max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden md:max-w-2xl"
+    class="mt-4 max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden md:max-w-2xl" event:click="invisible()"
   >
     <div class="md:flex">
       <div class="p-4 w-full">
@@ -156,6 +156,7 @@
           <div class=""><code>4a4d06c2</code></div>
           <div class="">7 Ions</div>
           <div class="col-span-2">Today at 4:14 PM</div>
+      
           <div class="">
             <label>
               <button
@@ -167,8 +168,8 @@
               <div class="dropdown">
                 <i class="fas fa-ellipsis-v text-gray-500 hover:text-gray-700"></i>
                 <div class="dropdown-content rounded-xl" attr:style="'display: ' + (visible ? 'none' : 'block')">  
-                  <button class="h-8 w-24 hover:bg-gray-200 rounded-t-xl text-left px-3">Details</button>
-                  <button class="h-8 w-24 text-red-500 hover:bg-gray-200 rounded-b-xl text-left px-3">Cancel Spark</button>
+                  <button class="h-8 w-24 hover:bg-gray-200 rounded-t-xl text-left px-3 focus:outline-none focus:ring focus:border-blue-300e">Details</button>
+                  <button class="h-8 w-24 text-red-500 hover:bg-gray-200 rounded-b-xl text-left px-3 focus:outline-none focus:ring focus:border-blue-300">Cancel Spark</button>
                 </div>
               </div>
 

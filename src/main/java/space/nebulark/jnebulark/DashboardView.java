@@ -7,8 +7,13 @@ public class DashboardView {
    public boolean visible = true;
 
    public void visible() {
-       visible = !visible;
+       visible = false;
        System.out.println("Hallo");
+   }
+
+   public void invisible() {
+       visible = true;
+       System.out.println("invis");
    }
 
    public boolean getVisible() {
