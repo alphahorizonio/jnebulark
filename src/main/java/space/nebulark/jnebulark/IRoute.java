@@ -8,7 +8,7 @@ import org.teavm.flavour.routing.Route;
 public interface IRoute extends Route {
     @Path("/")
     void index();
-    
+
     @Path("/missionControl")
     void missionControl();
 
@@ -20,4 +20,10 @@ public interface IRoute extends Route {
 
     @Path("/recentSparkDetails")
     void recentSparkDetails();
+
+    @Path("/webnetesLanding")
+    void webnetesLanding();
+
+    @Path("/webnetesDashboard")
+    void webnetesDashboard();
 }

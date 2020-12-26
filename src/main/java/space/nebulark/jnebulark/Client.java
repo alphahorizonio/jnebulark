@@ -8,10 +8,7 @@ import org.teavm.flavour.widgets.RouteBinder;
 public class Client extends ApplicationTemplate implements IRoute {
     public static void main(String[] args) {
         Client client = new Client();
-        new RouteBinder()
-                .withDefault(IRoute.class, r -> r.index())
-                .add(client)
-                .update();
+        new RouteBinder().withDefault(IRoute.class, r -> r.index()).add(client).update();
 
         client.bind("application-content");
     }
@@ -31,7 +28,7 @@ public class Client extends ApplicationTemplate implements IRoute {
         setView(new DashboardView());
     }
 
-    @Override 
+    @Override
     public void sparkDetails() {
         setView(new SparkDetailsView());
     }
@@ -39,5 +36,15 @@ public class Client extends ApplicationTemplate implements IRoute {
     @Override
     public void recentSparkDetails() {
         setView(new RecentSparkDetailsView());
+    }
+
+    @Override
+    public void webnetesLanding() {
+        setView(new WebnetesLandingView());
+    }
+
+    @Override
+    public void webnetesDashboard() {
+        setView(new WebnetesDashboardView());
     }
 }
