@@ -26,4 +26,7 @@ public interface IRoute extends Route {
 
     @Path("/old/webnetesDashboard")
     void webnetesDashboard();
+
+    @Path("/webnetes")
+    void webnetes();
 }

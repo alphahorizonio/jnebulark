@@ -47,4 +47,9 @@ public class Client extends ApplicationTemplate implements IRoute {
     public void webnetesDashboard() {
         setView(new WebnetesDashboardView());
     }
+
+    @Override
+    public void webnetes() {
+        setView(new WebnetesView());
+    }
 }
