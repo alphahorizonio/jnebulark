@@ -4,8 +4,20 @@ import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.jso.typedarrays.Uint8Array;
 
-@BindTemplate("templates/webnetes.html")
-public class WebnetesView {
+@BindTemplate("templates/webnetesOverview.html")
+public class WebnetesOverviewView {
+
+    public void toWebnetesOverview() {
+        Routing.open(IRoute.class).webnetesOverview();
+    }
+
+    public void toWebnetesExplore() {
+        Routing.open(IRoute.class).webnetesExplore();
+    }
+
+    public void toWebnetesConfig() {
+        Routing.open(IRoute.class).webnetesConfig();
+    }
 
     public void close() {
         return;
