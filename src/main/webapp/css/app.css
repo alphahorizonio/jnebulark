@@ -66,10 +66,3 @@ body.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;
 }
-
-pre code {
-  background-color: #eee;
-  border: 1px solid #999;
-  display: block;
-  padding: 20px;
-}
