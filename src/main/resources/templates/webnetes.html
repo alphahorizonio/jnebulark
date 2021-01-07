@@ -160,7 +160,9 @@
         <p class="text-white">
           Scan the QR code or share the link to invite nodes.
         </p>
-        <img class="h-32 w-32 mt-5"src="../img/webnetes-icon.png"></img>
+        <img
+          src="https://store-images.s-microsoft.com/image/apps.33967.13510798887182917.246b0a3d-c3cc-46fc-9cea-021069d15c09.392bf5f5-ade4-4b36-aa63-bb15d5c3817a"
+        />
         <p class="text-white">You can alway join nodes later.</p>
 
         <div class="flex justify-end pt-2">
@@ -179,51 +181,168 @@
     </div>
   </div>
 
-
   <!--Website content-->
   <div id="config" class="flex flex-col items-center">
     <div class="flex flex-col items-center mt-10 w-full">
-      <div class="flex flex-col justify-center items-center w-full md:w-3/5 md:border-2 border-white">
-      <div class="h-40 w-full mb-10">
-      <div class="flex flex-col md:flex-row justify-between p-8 items-center">
-        <p class="text-white text-4xl font-bold"><i class="fas fa-check mr-2 text-2xl"></i> Connected</p>
-        <div class="flex flex-col items-center mr-0 md:mr-24">
-          <p class="text-white text-lg mb-6">
-            You are:
-          </p>
-          <p class="text-white text-4xl font-bold"><i class="fas fa-paper-plane mr-2 text-2xl"></i>127.0.2.0</p>
+      <div
+        class="flex flex-col justify-center items-center w-full md:w-3/5 md:border-2 border-white"
+      >
+        <div class="h-40 w-full mb-10">
+          <div
+            class="flex flex-col md:flex-row justify-between p-8 items-center"
+          >
+            <p class="text-white text-4xl font-bold">
+              <i class="fas fa-check mr-2 text-2xl"></i> Connected
+            </p>
+            <div class="flex flex-col items-center mr-0 md:mr-24">
+              <p class="text-white text-lg mb-6">You are:</p>
+              <p class="text-white text-4xl font-bold">
+                <i class="fas fa-paper-plane mr-2 text-2xl"></i>127.0.2.0
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <a
+                class="text-white"
+                href="https://github.com/pojntfx/webnetesctl"
+                rel="noopener noreferrer"
+              >
+                <p class="text-white text-lg">
+                  webnetesctl <i class="fas fa-external-link-alt"></i>
+                </p>
+              </a>
+              <code class="text-white text-lg">0.0.1</code>
+              <a
+                class="text-white"
+                href="https://github.com/pojntfx/webnetes"
+                rel="noopener noreferrer"
+              >
+                <p class="text-white text-lg">
+                  webnetes <i class="fas fa-external-link-alt"></i>
+                </p>
+              </a>
+              <code class="text-white text-lg">^0.0.5</code>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col items-center">
-          <a class="text-white" href="https://github.com/pojntfx/webnetesctl" rel="noopener noreferrer">
-          <p class="text-white text-lg">
-            webnetesctl <i class="fas fa-external-link-alt"></i>
-          </p>
-        </a>
-          <code class="text-white text-lg">0.0.1</code>
-          <a class="text-white" href="https://github.com/pojntfx/webnetes" rel="noopener noreferrer">
-          <p class="text-white text-lg">
-            webnetes <i class="fas fa-external-link-alt"></i>
-          </p>
-        </a>
-          <code class="text-white text-lg">^0.0.5</code>
+        <div class="flex flex-row w-full items-center">
+          <div class="border border-white w-full h-0.5"></div>
+          <p class="text-white px-8 text-lg">Metadata</p>
+          <div class="border border-white w-full h-0.5"></div>
         </div>
-      </div>   
-    </div>
-    <div class="flex flex-row w-full items-center">
-      <div class="border border-white w-full h-0.5"></div>
-      <p class="text-white px-8 text-lg">Metadata</p>
-      <div class="border border-white w-full h-0.5"></div>
-    </div>
-      <div class="flex flex-col justify-start w-full p-8">
-        <p class="text-white text-lg"><i class="fas fa-globe"></i> Public IP</p>
-        <p class="text-white text-lg">2003:c9:7726:6900:dc3f:d269:d9c7:a7cb</p>
-        <p class="text-white text-lg"><i class="fas fa-map-marker-alt"></i> Location</p>
-        <p class="text-white text-lg">Not set.</p>
-        <p class="text-white text-lg"><i class="fas fa-thumbtack"></i> Coordinates</p>
-        <p class="text-white text-lg">Not set.</p>
+        <div class="flex flex-col justify-start w-full p-8">
+          <p class="text-white text-lg">
+            <i class="fas fa-globe"></i> Public IP
+          </p>
+          <p class="text-white text-lg">
+            2003:c9:7726:6900:dc3f:d269:d9c7:a7cb
+          </p>
+          <p class="text-white text-lg">
+            <i class="fas fa-map-marker-alt"></i> Location
+          </p>
+          <p class="text-white text-lg">Not set.</p>
+          <p class="text-white text-lg">
+            <i class="fas fa-thumbtack"></i> Coordinates
+          </p>
+          <p class="text-white text-lg">Not set.</p>
+        </div>
       </div>
     </div>
   </div>
+  <div class="flex flex-row w-full justify-between items-center p-12">
+    <h1 class="text-4xl text-white font-bold">Node Config</h1>
+    <div
+      class="flex flex-row items-center w-40 bg-gray-800 text-white py-2 border-2 border-blue-500 rounded font-bold"
+    >
+      <i class="fas fa-save ml-3"></i>
+      <p class="text-white ml-1">Apply & Reload</p>
+    </div>
+  </div>
+  <div class="flex flex-col items-center bg-gray-900">
+    <div class="w-full h-96">
+      <code>
+        <textarea
+          class="resize-none border rounded-md w-full h-full mb-2 bg-gray-900 text-white"
+        >
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: Signaler
+        metadata:
+          name: Public unisockets Signaling Server
+          label: unisockets_public
+        spec:
+          urls:
+            - wss://unisockets.herokuapp.com
+          retryAfter: 1000
+        ---
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: StunServer
+        metadata:
+          name: Google STUN Server
+          label: google
+        spec:
+          urls:
+            - stun:stun.l.google.com:19302
+        ---
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: StunServer
+        metadata:
+          name: Twillio STUN Server
+          label: twillio
+        spec:
+          urls:
+            - stun:global.stun.twilio.com:3478?transport=udp
+        ---
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: TurnServer
+        metadata:
+          name: Twillio TURN Server (UDP)
+          label: twillio_udp
+        spec:
+          urls:
+            - turn:global.turn.twilio.com:3478?transport=tcp
+          username: f4b4035eaa76f4a55de5f4351567653ee4ff6fa97b50b6b334fcc1be9c27212d
+          credential: w1uxM55V9yVoqyVFjt+mxDBV0F87AUCemaYVQGxsPLw=
+        ---
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: TurnServer
+        metadata:
+          name: Twillio TURN Server (TCP)
+          label: twillio_tcp
+        spec:
+          urls:
+            - turn:global.turn.twilio.com:3478?transport=tcp
+          username: f4b4035eaa76f4a55de5f4351567653ee4ff6fa97b50b6b334fcc1be9c27212d
+          credential: w1uxM55V9yVoqyVFjt+mxDBV0F87AUCemaYVQGxsPLw=
+        ---
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: TurnServer
+        metadata:
+          name: Twillio TURN Server Fallback (TCP)
+          label: twillio_tcp_fallback
+        spec:
+          urls:
+            - turn:global.turn.twilio.com:443?transport=tcp
+          username: f4b4035eaa76f4a55de5f4351567653ee4ff6fa97b50b6b334fcc1be9c27212d
+          credential: w1uxM55V9yVoqyVFjt+mxDBV0F87AUCemaYVQGxsPLw=
+        ---
+        apiVersion: webnetes.felix.pojtinger.com/v1alpha1
+        kind: NetworkInterface
+        metadata:
+          name: Management Network
+          label: management_network
+        spec:
+          network: ''
+          prefix: CLUSTER_ID # This is a template; it will be filled when creating or joining a cluster
+        ></textarea
+        >
+      </code>
+    </div>
+
+    <p class="text-white text-lg bg-gray-900">
+      You can find an example in the<span class="text-blue-500"><a target="_blank" href="https://github.com/pojntfx/webnetes/blob/main/app/webnetes_node/node.yaml" > </span>
+        Github Repository <i class="fas fa-external-link-alt"></i
+      > </a></span>
+    </p>
+ 
   </div>
 </div>
 
