@@ -2,6 +2,8 @@ package space.nebulark.jnebulark;
 
 import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
+import org.teavm.jso.JSBody;
+import org.teavm.jso.browser.Window;
 import org.teavm.jso.typedarrays.Uint8Array;
 
 @BindTemplate("templates/webnetesOverview.html")
@@ -19,8 +21,13 @@ public class WebnetesOverviewView {
         Routing.open(IRoute.class).webnetesConfig();
     }
 
-    public void printMe() {
-        System.out.println("works");
+    public void toCluster() {
+        Window window = Window.current();
+        window.getLocation().replace("https://webnetesctl.vercel.app/");
+    }
+
+    public void printMe(String message) {
+        System.out.println(message);
     }
 
     public void close() {
