@@ -150,7 +150,7 @@
 
       <div class="modal-content py-4 text-left px-6">
         <div class="flex justify-between items-center pb-3">
-          <p class="text-2xl font-bold text-white">Create Ressource</p>
+          <p class="text-2xl font-bold text-white">Invite</p>
           <div class="modal-close-invite cursor-pointer z-50">
             <svg
               class="fill-current text-black"
@@ -217,9 +217,11 @@
         </svg>
       </div>
 
-      <div class="modal-content py-4 text-left px-6">
+      <div class="modal-content py-4 text-left px-3">
         <div class="flex justify-between items-center pb-3">
-          <p class="text-2xl font-bold text-white">Invite</p>
+          <p class="text-2xl font-bold text-white">
+            <i class="fas fa-cube"></i> Create Resource
+          </p>
           <div class="modal-close-ressource cursor-pointer z-50">
             <svg
               class="fill-current text-black"
@@ -235,13 +237,33 @@
           </div>
         </div>
 
-        <p class="text-white">
-          Scan the QR code or share the link to invite nodes.
-        </p>
-        <img
-          src="https://store-images.s-microsoft.com/image/apps.33967.13510798887182917.246b0a3d-c3cc-46fc-9cea-021069d15c09.392bf5f5-ade4-4b36-aa63-bb15d5c3817a"
-        />
-        <p class="text-white">You can alway join nodes later.</p>
+        <div class="flex flex-col items-center bg-gray-900">
+          <div class="w-full h-96">
+            <code>
+              <textarea
+                class="resize-none border rounded-md w-full h-full mb-2 bg-gray-900 text-white"
+              >
+
+              </textarea>
+            </code>
+          </div>
+        </div>
+
+        <p class="text-white text-lg mt-4">
+          You can find an example in the<span class="text-blue-500"><a target="_blank" href="https://github.com/pojntfx/webnetes/tree/main/examples" > </span>
+        Github Repository <i class="fas fa-external-link-alt"></i></a></span>
+       </p>
+
+       <select class="w-full border bg-gray-900 text-white rounded px-3 py-2 outline-none mt-4">
+        <option class="py-1">Option 1</option>
+        <option class="py-1">Option 2</option>
+        <option class="py-1">Option 3</option>
+    </select>
+
+    <p class="text-white text-lg mt-4">
+      You can your created resources in the<span class="text-blue-500"><a target="_blank" href="/#/webnetesExplore" > </span>
+   Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
+   </p>
 
         <div class="flex justify-end pt-2">
           <button
@@ -252,7 +274,7 @@
           <button
             class="px-4 bg-blue-500 p-2 rounded-lg text-white hover:bg-gray-100 hover:bg-blue-400"
           >
-            Done
+          Create Resource +
           </button>
         </div>
       </div>
