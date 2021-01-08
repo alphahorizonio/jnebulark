@@ -19,6 +19,10 @@ public class WebnetesOverviewView {
         Routing.open(IRoute.class).webnetesConfig();
     }
 
+    public void printMe() {
+        System.out.println("works");
+    }
+
     public void close() {
         return;
     }
