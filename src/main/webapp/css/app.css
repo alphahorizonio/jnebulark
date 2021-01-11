@@ -63,6 +63,10 @@ input {
   transition: opacity 0.25s ease;
 }
 
+.active {
+  display: block;
+}
+
 body.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;

@@ -4,12 +4,11 @@
       <div class="flex flex-row flex-start">
         <p id="hamburgerbtn" class="md:hidden text-white">Menu</p>
       </div>
-
-      <ul class="hidden md:flex md:flex-row md:items-center" id="mobileMenu">
+      <ul class="hidden md:flex md:flex-row md:items-center">
         <li class="pr-5 text-white">
           <div
             class="flex flex-col items-center bg-blue-500 hover:bg-blue-700 rounded p-1"
-            event:click="toWebnetesOverview()"
+            event:click="setHamburgerVisible()"
           >
             <i class="fas fa-globe"></i><a>Overview</a>
           </div>
@@ -76,16 +75,19 @@
             <label>
               <button
                 class="focus:outline-none w-4 h-5 mr-16 text-xs text-black"
+                
               >
                 <div class="dropdown outline-none w--1" tabindex="0">
                   <p
                     class="text-white w-20 bg-blue-500 text-white py-2 rounded font-bold"
+                
                   >
                     Create +
                   </p>
                   <div class="dropdown-content rounded-xl bg-black">
                     <button
                       class="h-8 w-20 hover:bg-blue-700 rounded-t-xl text-left text-white px-3 focus:outline-none focus:ring focus:border-blue-300 modal-open-ressource"
+                      event:mousedown="setCreateModalVisible()"
                     >
                       Ressource
                     </button>
@@ -193,17 +195,18 @@
 
   <!--Create Ressource Modal-->
   <div
-    class="modal-ressource opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    class="fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    attr:style="'display: ' + (createVisible ? 'none' : '')" 
   >
     <div
-      class="modal-overlay-ressource absolute w-full h-full bg-gray-900 opacity-50"
+      class="absolute w-full h-full bg-gray-900 opacity-50"
     ></div>
 
     <div
-      class="modal-container bg-gray-800 border-2 border-indigo-100 w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
+      class="bg-gray-800 border-2 border-indigo-100 w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
     >
       <div
-        class="modal-close-ressource absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"
+        class="absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"
       >
         <svg
           class="fill-current text-white"
@@ -218,12 +221,12 @@
         </svg>
       </div>
 
-      <div class="modal-content py-4 text-left px-3">
+      <div class="py-4 text-left px-3">
         <div class="flex justify-between items-center pb-3">
           <p class="text-2xl font-bold text-white">
             <i class="fas fa-cube"></i> Create Resource
           </p>
-          <div class="modal-close-ressource cursor-pointer z-50">
+          <div class="cursor-pointer z-50">
             <svg
               class="fill-current text-black"
               xmlns="http://www.w3.org/2000/svg"
@@ -268,8 +271,8 @@
 
         <div class="flex justify-end pt-2">
           <button
-            class="modal-close-ressource px-4 p-2 bg-transparent rounded-lg text-blue-500 hover:text-blue-400 mr-2"
-          >
+            class="px-4 p-2 bg-transparent rounded-lg text-blue-500 hover:text-blue-400 mr-2"
+            event:click="setCreateModalVisible()"          >
             Close
           </button>
           <button
@@ -403,22 +406,7 @@
     </div>
   </div>
 
-  <style>
-    .active {
-      display: block;
-    }
-  </style>
-
   <script>
-    //HamburgerMenu
-    let hamburger = document.getElementById("hamburgerbtn");
-
-    let mobileMenu = document.getElementById("mobileMenu");
-
-    hamburger.addEventListener("click", function () {
-      mobileMenu.classList.toggle("active");
-    });
-
     //InviteModal
     var openmodal = document.querySelectorAll(".modal-open-invite");
     for (var i = 0; i < openmodal.length; i++) {
@@ -450,48 +438,6 @@
     };
 
     function toggleInviteModal() {
-      const body = document.querySelector("body");
-      const modal = document.querySelector(".modal-invite");
-      modal.classList.toggle("opacity-0");
-      modal.classList.toggle("pointer-events-none");
-      body.classList.toggle("modal-invite-active");
-    }
-
-    //RessourceModal
-
-    var openmodal = document.querySelectorAll(".modal-open-ressource");
-    for (var i = 0; i < openmodal.length; i++) {
-      openmodal[i].addEventListener("mousedown", function (event) {
-        event.preventDefault();
-        toggleRessourceModal();
-      });
-    }
-
-    const overlayressource = document.querySelector(".modal-overlay-ressource");
-    overlayressource.addEventListener("click", toggleRessourceModal);
-
-    var closemodal = document.querySelectorAll(".modal-close-ressource");
-    for (var i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener("click", toggleRessourceModal);
-    }
-
-    document.onkeydown = function (evt) {
-      evt = evt || window.event;
-      var isEscape = false;
-      if ("key" in evt) {
-        isEscape = evt.key === "Escape" || evt.key === "Esc";
-      } else {
-        isEscape = evt.keyCode === 27;
-      }
-      if (
-        isEscape &&
-        document.body.classList.contains("modal-active-ressource")
-      ) {
-        toggleRessourceModal();
-      }
-    };
-
-    function toggleRessourceModal() {
       const body = document.querySelector("body");
       const modal = document.querySelector(".modal-invite");
       modal.classList.toggle("opacity-0");
