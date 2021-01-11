@@ -1,13 +1,8 @@
 package space.nebulark.jnebulark;
 
-import javax.swing.text.Document;
-
-import com.google.inject.spi.Element;
-
 import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.jso.browser.Window;
-import org.teavm.jso.dom.html.HTMLElement;
 import org.teavm.jso.typedarrays.Uint8Array;
 
 @BindTemplate("templates/webnetesOverview.html")

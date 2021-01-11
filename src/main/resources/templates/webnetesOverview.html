@@ -8,7 +8,7 @@
         <li class="pr-5 text-white">
           <div
             class="flex flex-col items-center bg-blue-500 hover:bg-blue-700 rounded p-1"
-            event:click="setHamburgerVisible()"
+            event:click="toWebnetesOverview()"
           >
             <i class="fas fa-globe"></i><a>Overview</a>
           </div>
@@ -411,86 +411,4 @@
       </div>
     </div>
   </div>
-
-  <script>
-    //InviteModal
-    var openmodal = document.querySelectorAll(".modal-open-invite");
-    for (var i = 0; i < openmodal.length; i++) {
-      openmodal[i].addEventListener("click", function (event) {
-        event.preventDefault();
-        toggleInviteModal();
-      });
-    }
-
-    const overlayinvite = document.querySelector(".modal-overlay-invite");
-    overlayinvite.addEventListener("click", toggleInviteModal);
-
-    var closemodal = document.querySelectorAll(".modal-close-invite");
-    for (var i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener("click", toggleInviteModal);
-    }
-
-    document.onkeydown = function (evt) {
-      evt = evt || window.event;
-      var isEscape = false;
-      if ("key" in evt) {
-        isEscape = evt.key === "Escape" || evt.key === "Esc";
-      } else {
-        isEscape = evt.keyCode === 27;
-      }
-      if (isEscape && document.body.classList.contains("modal-active-invite")) {
-        toggleInviteModal();
-      }
-    };
-
-    function toggleInviteModal() {
-      const body = document.querySelector("body");
-      const modal = document.querySelector(".modal-invite");
-      modal.classList.toggle("opacity-0");
-      modal.classList.toggle("pointer-events-none");
-      body.classList.toggle("modal-invite-active");
-    }
-
-    //FileModal
-
-        var openmodal = document.querySelectorAll(".modal-open-file");
-    for (var i = 0; i < openmodal.length; i++) {
-      openmodal[i].addEventListener("mousedown", function (event) {
-        event.preventDefault();
-        toggleFileModal();
-      });
-    }
-
-    const overlayFile = document.querySelector(".modal-overlay-file");
-    overlayFile.addEventListener("click", toggleFileModal);
-
-    var closemodal = document.querySelectorAll(".modal-close-file");
-    for (var i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener("click", toggleFileModal);
-    }
-
-    document.onkeydown = function (evt) {
-      evt = evt || window.event;
-      var isEscape = false;
-      if ("key" in evt) {
-        isEscape = evt.key === "Escape" || evt.key === "Esc";
-      } else {
-        isEscape = evt.keyCode === 27;
-      }
-      if (
-        isEscape &&
-        document.body.classList.contains("modal-active-file")
-      ) {
-        toggleFileModal();
-      }
-    };
-
-    function toggleFileModal() {
-      const body = document.querySelector("body");
-      const modal = document.querySelector(".modal-file");
-      modal.classList.toggle("opacity-0");
-      modal.classList.toggle("pointer-events-none");
-      body.classList.toggle("modal-file-active");
-    }
-  </script>
 </div>
