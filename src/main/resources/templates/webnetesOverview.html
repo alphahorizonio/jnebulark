@@ -98,7 +98,8 @@
                       Cluster
                     </button>
                     <button
-                      class="h-8 w-20 hover:bg-blue-700 rounded-b-xl text-left text-white px-3 focus:outline-none focus:ring focus:border-blue-300 modal-open-file"
+                      class="h-8 w-20 hover:bg-blue-700 rounded-b-xl text-left text-white px-3 focus:outline-none focus:ring focus:border-blue-300"
+                      event:mousedown="setFileModalVisible()"
                     >
                       File
                     </button>
@@ -111,6 +112,7 @@
         <li class="ml-2 mr-2">
           <button
             class="focus:outline-none w-4 h-5 mr-16 text-xs text-black modal-open-invite"
+            event:click="setInviteModalVisible()"
           >
             <div
               class="flex flex-row items-center w-20 bg-gray-800 text-white py-2 border-2 border-blue-500 rounded font-bold"
@@ -126,7 +128,8 @@
 
   <!--Invite Modal-->
   <div
-    class="modal-invite opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    class="fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    attr:style="'display: ' + (inviteVisible ? 'none' : '')" 
   >
     <div
       class="modal-overlay-invite absolute w-full h-full bg-gray-900 opacity-50"
@@ -180,6 +183,7 @@
         <div class="flex justify-end pt-2">
           <button
             class="modal-close-invite px-4 p-2 bg-transparent rounded-lg text-blue-500 hover:text-blue-400 mr-2"
+            event:click="setInviteModalVisible()"  
           >
             Close
           </button>
@@ -287,7 +291,8 @@
 
     <!--File Modal-->
     <div
-    class="modal-file opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    class="fixed w-full h-full top-0 left-0 flex items-center justify-center"
+    attr:style="'display: ' + (fileVisible ? 'none' : '')" 
   >
     <div
       class="modal-overlay-file absolute w-full h-full bg-gray-900 opacity-50"
@@ -357,6 +362,7 @@
         <div class="flex justify-end pt-2">
           <button
             class="modal-close-file px-4 p-2 bg-transparent rounded-lg text-blue-500 hover:text-blue-400 mr-2"
+            event:click="setFileModalVisible()"
           >
             Close
           </button>

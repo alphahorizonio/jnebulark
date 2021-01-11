@@ -14,6 +14,8 @@ import org.teavm.jso.typedarrays.Uint8Array;
 public class WebnetesOverviewView {
     public boolean visible = true;
     public boolean createVisible = true;
+    public boolean fileVisible = true;
+    public boolean inviteVisible = true;
 
     public void toWebnetesOverview() {
         Routing.open(IRoute.class).webnetesOverview();
@@ -42,8 +44,14 @@ public class WebnetesOverviewView {
         this.createVisible = otherVisible;
     }
 
-    public void printMe(String message) {
-        System.out.println(message);
+    public void setInviteModalVisible() {
+        boolean otherVisible = !inviteVisible;
+        this.inviteVisible = otherVisible;
+    }
+
+    public void setFileModalVisible() {
+        boolean otherVisible = !fileVisible;
+        this.fileVisible = otherVisible;
     }
 
     public void close() {
