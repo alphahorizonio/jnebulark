@@ -380,7 +380,7 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
       <p class="text-white text-4xl font-bold">
         <i class="fas fa-mobile"></i> Nodes
       </p>
-      <i class="fas fa-chevron-down text-white text-2xl"></i>
+      <i class="fas fa-chevron-down text-white text-2xl" event:click="hideFirstTable()"  attr:style="'transform: ' + (firstTableVisible ? 'rotate(0deg)' : 'rotate(270deg)')"></i>
     </div>
     <div class="w-full text-gray-600 px-8">
       <input
@@ -393,7 +393,8 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
         <i class="fas fa-search"></i>
       </button>
     </div>
-    <div class="text-white w-full px-8 mt-8">
+    <div class="text-white w-full px-8 mt-8"
+    attr:style="'display: ' + (firstTableVisible ? 'none' : '')" >
       <table
         class="table-auto w-full border-collapse border border-white bg-gray-900"
       >
@@ -572,7 +573,7 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
       <p class="text-white text-4xl font-bold">
         <i class="fas fa-cube"></i> Ressources
       </p>
-      <i class="fas fa-chevron-down text-white text-2xl"></i>
+      <i class="fas fa-chevron-down text-white text-2xl" event:click="hideSecondTable()"  attr:style="'transform: ' + (secondTableVisible ? 'rotate(0deg)' : 'rotate(270deg)')"></i>
     </div>
     <div class="w-full text-gray-600 px-8 mb-8">
       <input
@@ -585,7 +586,7 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
         <i class="fas fa-search"></i>
       </button>
     </div>
-    <div class="text-white w-full px-8">
+    <div class="text-white w-full px-8"  attr:style="'display: ' + (secondTableVisible ? 'none' : '')" >
       <table
         class="table-auto w-full border-collapse border border-white bg-gray-900"
       >

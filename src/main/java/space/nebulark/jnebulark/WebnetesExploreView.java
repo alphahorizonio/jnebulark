@@ -9,6 +9,8 @@ public class WebnetesExploreView {
     public boolean createVisible = true;
     public boolean fileVisible = true;
     public boolean inviteVisible = true;
+    public boolean firstTableVisible = false;
+    public boolean secondTableVisible = false;
 
     public void setCreateModalVisible() {
         boolean otherVisible = !createVisible;
@@ -23,6 +25,16 @@ public class WebnetesExploreView {
     public void toCluster() {
         Window window = Window.current();
         window.getLocation().replace("https://webnetesctl.vercel.app/");
+    }
+
+    public void hideFirstTable() {
+        boolean otherVisible = !firstTableVisible;
+        this.firstTableVisible = otherVisible;
+    }
+
+    public void hideSecondTable() {
+        boolean otherVisible = !secondTableVisible;
+        this.secondTableVisible = otherVisible;
     }
 
     public void setFileModalVisible() {
