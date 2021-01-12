@@ -3,6 +3,7 @@ package space.nebulark.jnebulark;
 import org.teavm.flavour.routing.Routing;
 import org.teavm.jso.browser.Window;
 import org.teavm.flavour.templates.BindTemplate;
+import space.nebulark.jnebulark.Node;
 
 @BindTemplate("templates/webnetesExplore.html")
 public class WebnetesExploreView {
@@ -11,6 +12,26 @@ public class WebnetesExploreView {
     public boolean inviteVisible = true;
     public boolean firstTableVisible = false;
     public boolean secondTableVisible = false;
+
+    public void openInExplore() {
+        Node.open("ey");
+    }
+
+    public void deleteResourcesInExplore() {
+        Node.open("ey");
+    }
+
+    public void closeinExplore() {
+        Node.open("ey");
+    }
+
+    public void seedInExplore() {
+        Node.open("ey");
+    }
+
+    public void createResourceInExplore() {
+        Node.open("ey");
+    }
 
     public void setCreateModalVisible() {
         boolean otherVisible = !createVisible;
