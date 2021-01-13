@@ -1,0 +1,30 @@
+package space.nebulark.jnebulark.data;
+
+public class DefaultFormValues {
+    public static String DEFAULT_NODE_CONFIG = "apiVersion: schema.webnetes.dev/v1alpha1\n" + "kind: Signaler\n"
+            + "metadata:\n" + "  name: Public unisockets Signaling Server\n" + "  label: unisockets_public\n"
+            + "spec:\n" + "  urls:\n" + "    - wss://signaler.webnetes.dev\n" + "  retryAfter: 1000\n" + "---\n"
+            + "apiVersion: schema.webnetes.dev/v1alpha1\n" + "kind: StunServer\n" + "metadata:\n"
+            + "  name: Google STUN Server\n" + "  label: google\n" + "spec:\n" + "  urls:\n"
+            + "    - stun:stun.l.google.com:19302\n" + "---\n" + "apiVersion: schema.webnetes.dev/v1alpha1\n"
+            + "kind: StunServer\n" + "metadata:\n" + "  name: Twillio STUN Server\n" + "  label: twillio\n" + "spec:\n"
+            + "  urls:\n" + "    - stun:global.stun.twilio.com:3478?transport=udp\n" + "---\n"
+            + "apiVersion: schema.webnetes.dev/v1alpha1\n" + "kind: TurnServer\n" + "metadata:\n"
+            + "  name: Twillio TURN Server (UDP)\n" + "  label: twillio_udp\n" + "spec:\n" + "  urls:\n"
+            + "    - turn:global.turn.twilio.com:3478?transport=tcp\n"
+            + "  username: f4b4035eaa76f4a55de5f4351567653ee4ff6fa97b50b6b334fcc1be9c27212d\n"
+            + "  credential: w1uxM55V9yVoqyVFjt+mxDBV0F87AUCemaYVQGxsPLw=\n" + "---\n"
+            + "apiVersion: schema.webnetes.dev/v1alpha1\n" + "kind: TurnServer\n" + "metadata:\n"
+            + "  name: Twillio TURN Server (TCP)\n" + "  label: twillio_tcp\n" + "spec:\n" + "  urls:\n"
+            + "    - turn:global.turn.twilio.com:3478?transport=tcp\n"
+            + "  username: f4b4035eaa76f4a55de5f4351567653ee4ff6fa97b50b6b334fcc1be9c27212d\n"
+            + "  credential: w1uxM55V9yVoqyVFjt+mxDBV0F87AUCemaYVQGxsPLw=\n" + "---\n"
+            + "apiVersion: schema.webnetes.dev/v1alpha1\n" + "kind: TurnServer\n" + "metadata:\n"
+            + "  name: Twillio TURN Server Fallback (TCP)\n" + "  label: twillio_tcp_fallback\n" + "spec:\n"
+            + "  urls:\n" + "    - turn:global.turn.twilio.com:443?transport=tcp\n"
+            + "  username: f4b4035eaa76f4a55de5f4351567653ee4ff6fa97b50b6b334fcc1be9c27212d\n"
+            + "  credential: w1uxM55V9yVoqyVFjt+mxDBV0F87AUCemaYVQGxsPLw=\n" + "---\n"
+            + "apiVersion: schema.webnetes.dev/v1alpha1\n" + "kind: NetworkInterface\n" + "metadata:\n"
+            + "  name: Management Network\n" + "  label: management_network\n" + "spec:\n" + "  network: \"\"\n"
+            + "  prefix: 127.0.0\n";
+}

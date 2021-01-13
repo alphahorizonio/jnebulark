@@ -1,18 +1,31 @@
 package space.nebulark.jnebulark;
 
-import com.google.inject.spi.Element;
-
 import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
-import org.teavm.jso.typedarrays.Uint8Array;
 import org.teavm.jso.browser.Window;
-import org.teavm.jso.dom.html.HTMLElement;
+import org.teavm.jso.typedarrays.Uint8Array;
+
+import space.nebulark.jnebulark.data.DefaultFormValues;
 
 @BindTemplate("templates/webnetesConfig.html")
 public class WebnetesConfigView {
     public boolean createVisible = true;
     public boolean fileVisible = true;
     public boolean inviteVisible = true;
+
+    public String config = DefaultFormValues.DEFAULT_NODE_CONFIG;
+
+    public void setConfig(String newConfig) {
+        this.config = newConfig;
+    }
+
+    public String getConfig() {
+        return this.config;
+    }
+
+    public void openNode() {
+        Node.open(this.config);
+    }
 
     public void openInExplore() {
         Node.open("ey");
