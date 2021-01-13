@@ -7,6 +7,8 @@ import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.jso.browser.Window;
 
+import space.nebulark.jnebulark.models.ClusterResource;
+
 @BindTemplate("templates/webnetesExplore.html")
 public class WebnetesExploreView {
     public boolean createVisible = true;
@@ -77,7 +79,7 @@ public class WebnetesExploreView {
         Routing.open(IRoute.class).webnetesConfig();
     }
 
-    public List<String> getResources() {
-        return Node.resources.stream().map(r -> r.getDefinition()).collect(Collectors.toList());
+    public List<ClusterResource> getResources() {
+        return Node.resources;
     }
 }

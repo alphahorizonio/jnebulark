@@ -573,7 +573,8 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
     <ul>
       <std:foreach var="res" in="resources">
         <li>
-          <html:text value="res"/>
+          <html:text value="res.getDefinition()"/>@
+          <html:text value="res.getNodeId()"/>
         </li>
       </std:foreach>
     </ul>
