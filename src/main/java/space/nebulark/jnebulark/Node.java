@@ -16,12 +16,13 @@ public class Node {
     }
 
     public static void open(String configYaml) {
-        Node.openNode(configYaml);
+        Node.openNode(configYaml, () -> {
+            System.out.println("Hello, world!");
+        });
     }
 
-    @JSBody(params = { "configYaml" }, script = "function openNode(configYaml) {"
-            + "window.webnetesNode = new WebnetesNode(" + "        async (nodeId, resource) => {"
-            + "          console.log(\"Created resource\", nodeId, resource);" + "        },"
+    @JSBody(params = { "configYaml", "onCreateResource" }, script = "window.webnetesNode = new WebnetesNode("
+            + "        async (nodeId, resource) => {" + "onCreateResource()" + "        },"
             + "        async (nodeId, resource) => {" + "          console.log(\"Deleted resource\", nodeId, resource);"
             + "          if (resource.kind === EResourceKind.WORKLOAD)" + "            window.location.reload();"
             + "        }," + "        async (frame) => {" + "          console.log(\"Rejected resource\", frame);"
@@ -39,8 +40,8 @@ public class Node {
             + "        async (id) => {" + "          console.log(\"Deleting terminal\", id);" + "        },"
             + "        (id) => {" + "          const rawInput = prompt(`Please enter standard input for ${id}\\n`);"
             + "          if (rawInput) return new TextEncoder().encode(rawInput);" + "          return null;"
-            + "        }" + "      );" + "window.webnetesNode.open(configYaml)" + "};" + "openNode(configYaml)")
-    public static native void openNode(String configYaml);
+            + "        }" + "      );" + "window.webnetesNode.open(configYaml)")
+    public static native void openNode(String configYaml, OnCreateResourceHandler onCreateResource);
 
     public static void seedFile(String message) {
         System.out.println("seeded File");

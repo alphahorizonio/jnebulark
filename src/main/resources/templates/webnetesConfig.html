@@ -480,13 +480,13 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
 
   let mobileMenu = document.getElementById("mobileMenu");
 
-  hamburger.addEventListener("click", function () {
+  hamburger?.addEventListener("click", function () {
     mobileMenu.classList.toggle("active");
   });
 
   var openmodal = document.querySelectorAll(".modal-open");
   for (var i = 0; i < openmodal.length; i++) {
-    openmodal[i].addEventListener("click", function (event) {
+    openmodal[i]?.addEventListener("click", function (event) {
       event.preventDefault();
       toggleModal();
     });
@@ -494,11 +494,11 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
 
   //Modal
   const overlay = document.querySelector(".modal-overlay");
-  overlay.addEventListener("click", toggleModal);
+  overlay?.addEventListener("click", toggleModal);
 
   var closemodal = document.querySelectorAll(".modal-close");
   for (var i = 0; i < closemodal.length; i++) {
-    closemodal[i].addEventListener("click", toggleModal);
+    closemodal[i]?.addEventListener("click", toggleModal);
   }
 
   document.onkeydown = function (evt) {
