@@ -1,0 +1,46 @@
+WebnetesNode
+    constructor(
+        onCreateResource(nodeId: string, resource: string)
+        onDeleteResource(nodeId: string, resource: string)
+        onRejectResource(nodeId: string, resource: string)
+        onManagementNodeAcknowledged(id: string)
+        onManagementNodeJoin(id : stirng)
+        onManagementNodeLeave(id: string)
+        onResourceNodeAcknowledged(metadata: string, spec: string, id: string)
+        onResourceNodeJoin(metadata: string, spec: string, id: string)
+        onResourceNodeLeave(metadata: string, spec: string, id: string)
+        onTerminalCreate(onString: JSFunctor, id: string)
+        onTerminalWrite(id: string, msg: string)
+        onTerminalDelete(id: string)
+        onTerminalReadSync(id: string)
+    )
+
+    open(resources string)
+    createResources(resources string, nodeId string)
+    deleteResources(resources string, nodeId string)
+    seedFile(label: string, name: string, repository: string, fileInstance: string)
+    close()
+
+ClusterMetadataStore
+    nodeCount
+    resourceCount
+    clusterId
+
+NodeMetadataStore
+    connectionStatus
+    nodeId
+    nodeConfig
+
+ClusterResourcesStore
+    resources ClusterResource[]
+    
+ClusterNodesStore
+    nodes ClusterNode[]
+
+ClusterResource
+    nodeId string
+    definition string
+
+ClusterNode
+    nodeId
+    resourceCount

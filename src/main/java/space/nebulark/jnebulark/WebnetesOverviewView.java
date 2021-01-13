@@ -13,23 +13,23 @@ public class WebnetesOverviewView {
     public boolean inviteVisible = true;
 
     public void openInExplore() {
-        Node.open("ey");
+        // Node.open("ey");
     }
 
     public void deleteResourcesInExplore() {
-        Node.open("ey");
+        // Node.open("ey");
     }
 
     public void closeinExplore() {
-        Node.open("ey");
+        // Node.open("ey");
     }
 
     public void seedInExplore() {
-        Node.open("ey");
+        // Node.open("ey");
     }
-    
+
     public void createResourceInExplore() {
-        Node.open("ey");
+        // Node.open("ey");
     }
 
     public void toWebnetesOverview() {

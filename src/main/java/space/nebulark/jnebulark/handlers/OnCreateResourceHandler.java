@@ -1,4 +1,4 @@
-package space.nebulark.jnebulark;
+package space.nebulark.jnebulark.handlers;
 
 import org.teavm.jso.JSFunctor;
 import org.teavm.jso.JSObject;
