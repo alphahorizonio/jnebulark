@@ -7,6 +7,8 @@ import org.teavm.jso.typedarrays.Uint8Array;
 
 import space.nebulark.jnebulark.bindings.WebnetesNode;
 import space.nebulark.jnebulark.data.DefaultFormValues;
+import space.nebulark.jnebulark.models.ClusterResource;
+import space.nebulark.jnebulark.stores.ClusterResourcesStore;
 
 @BindTemplate("templates/webnetesConfig.html")
 public class WebnetesConfigView {
@@ -25,7 +27,8 @@ public class WebnetesConfigView {
     }
 
     public void openNode() {
-        WebnetesNode.initialize((String nodeId, String resource) -> System.out.println(nodeId));
+        WebnetesNode.initialize((String nodeId, String definition) -> ClusterResourcesStore.getInstance()
+                .addClusterResource(new ClusterResource(nodeId, definition)));
 
         WebnetesNode.open(this.config);
     }

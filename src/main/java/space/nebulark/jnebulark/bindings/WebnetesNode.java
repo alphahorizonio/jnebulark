@@ -38,19 +38,20 @@ public class WebnetesNode {
             + "        }" + "      );" + "window.webnetesNode.open(configYaml)")
     public static native void _open(String configYaml, OnCreateResourceHandler onCreateResource);
 
-    public static void createResources(String resources, String nodeId) {
+    // public static void createResources(String resources, String nodeId) {
 
-    }
+    // }
 
-    public static void deleteResources(String resources, String nodeId) {
+    // public static void deleteResources(String resources, String nodeId) {
 
-    }
+    // }
 
-    public static void seedFile(String label, String name, String repository, String file) {
+    // public static void seedFile(String label, String name, String repository,
+    // String file) {
 
-    }
+    // }
 
-    public static void close() {
+    // public static void close() {
 
-    }
+    // }
 }
