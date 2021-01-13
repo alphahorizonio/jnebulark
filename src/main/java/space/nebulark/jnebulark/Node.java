@@ -1,8 +1,15 @@
 package space.nebulark.jnebulark;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.teavm.jso.JSBody;
 
+import space.nebulark.jnebulark.models.ClusterResource;
+
 public class Node {
+    public static List<ClusterResource> resources = new ArrayList<ClusterResource>();
+
     public static void close() {
         System.out.println("closed node");
     }
@@ -17,7 +24,9 @@ public class Node {
 
     public static void open(String configYaml) {
         Node.openNode(configYaml, (nodeId, resource) -> {
-            System.out.println(nodeId + resource);
+            Node.resources.add(new ClusterResource(nodeId, resource));
+
+            System.out.println(Node.resources.size());
         });
     }
 
@@ -37,7 +46,7 @@ public class Node {
             + "        async (metadata, spec, id) => {"
             + "          console.log(\"Resource node left\", metadata, spec, id);" + "        },"
             + "        async (onStdin, id) => {" + "          console.log(\"Creating terminal\", id);" + "        },"
-            + "        async (id, msg) => {" + "          await terminals.write(id, msg);" + "        },"
+            + "        async (id, msg) => {" + "          console.log(\"Writing to terminal\", id, msg);" + "        },"
             + "        async (id) => {" + "          console.log(\"Deleting terminal\", id);" + "        },"
             + "        (id) => {" + "          const rawInput = prompt(`Please enter standard input for ${id}\\n`);"
             + "          if (rawInput) return new TextEncoder().encode(rawInput);" + "          return null;"
