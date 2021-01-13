@@ -569,6 +569,15 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
         <i class="fas fa-chevron-right text-white"></i>
       </button>
     </div>
+
+    <ul>
+      <std:foreach var="res" in="resources">
+        <li>
+          <html:text value="res"/>
+        </li>
+      </std:foreach>
+    </ul>
+
     <div class="flex flex-row justify-between items-center px-12 mb-8 w-full">
       <p class="text-white text-4xl font-bold">
         <i class="fas fa-cube"></i> Ressources

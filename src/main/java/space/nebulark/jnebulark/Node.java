@@ -23,11 +23,7 @@ public class Node {
     }
 
     public static void open(String configYaml) {
-        Node.openNode(configYaml, (nodeId, resource) -> {
-            Node.resources.add(new ClusterResource(nodeId, resource));
-
-            System.out.println(Node.resources.size());
-        });
+        Node.openNode(configYaml, (nodeId, resource) -> Node.resources.add(new ClusterResource(nodeId, resource)));
     }
 
     @JSBody(params = { "configYaml", "onCreateResource" }, script = "window.webnetesNode = new WebnetesNode("

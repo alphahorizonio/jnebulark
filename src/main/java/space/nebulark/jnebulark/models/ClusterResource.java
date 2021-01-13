@@ -8,4 +8,12 @@ public class ClusterResource {
         this.nodeId = nodeId;
         this.definition = definition;
     }
+
+    public String getNodeId() {
+        return this.nodeId;
+    }
+
+    public String getDefinition() {
+        return this.definition;
+    }
 }
