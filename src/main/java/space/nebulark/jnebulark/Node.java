@@ -16,14 +16,15 @@ public class Node {
     }
 
     public static void open(String configYaml) {
-        Node.openNode(configYaml, () -> {
-            System.out.println("Hello, world!");
+        Node.openNode(configYaml, (nodeId, resource) -> {
+            System.out.println(nodeId + resource);
         });
     }
 
     @JSBody(params = { "configYaml", "onCreateResource" }, script = "window.webnetesNode = new WebnetesNode("
-            + "        async (nodeId, resource) => {" + "onCreateResource()" + "        },"
-            + "        async (nodeId, resource) => {" + "          console.log(\"Deleted resource\", nodeId, resource);"
+            + "        async (nodeId, resource) => {" + "onCreateResource(nodeId, JSON.stringify(resource))"
+            + "        }," + "        async (nodeId, resource) => {"
+            + "          console.log(\"Deleted resource\", nodeId, resource);"
             + "          if (resource.kind === EResourceKind.WORKLOAD)" + "            window.location.reload();"
             + "        }," + "        async (frame) => {" + "          console.log(\"Rejected resource\", frame);"
             + "        }," + "        async (id) => {" + "          console.log(\"Management node acknowledged\", id);"

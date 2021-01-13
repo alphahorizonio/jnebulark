@@ -5,5 +5,5 @@ import org.teavm.jso.JSObject;
 
 @JSFunctor
 public interface OnCreateResourceHandler extends JSObject {
-    void onCreateResource();
+    void onCreateResource(String nodeId, String resource);
 }
