@@ -1,13 +1,13 @@
 package space.nebulark.jnebulark;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Collection;
 
 import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.jso.browser.Window;
 
 import space.nebulark.jnebulark.models.ClusterResource;
+import space.nebulark.jnebulark.stores.ClusterResourcesStore;
 
 @BindTemplate("templates/webnetesExplore.html")
 public class WebnetesExploreView {
@@ -79,7 +79,7 @@ public class WebnetesExploreView {
         Routing.open(IRoute.class).webnetesConfig();
     }
 
-    public List<ClusterResource> getResources() {
-        return Node.resources;
+    public Collection<ClusterResource> getResources() {
+        return ClusterResourcesStore.getInstance().getAll();
     }
 }
