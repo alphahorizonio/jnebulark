@@ -15,6 +15,10 @@ public class WebnetesNode {
         WebnetesNode._open(resources, WebnetesNode.onCreateResource);
     }
 
+    public static void createResources(String resources, String nodeId) {
+        WebnetesNode._createResources(resources, nodeId);
+    }
+
     @JSBody(params = { "configYaml", "onCreateResource" }, script = "window.webnetesNode = new WebnetesNode("
             + "        async (nodeId, resource) => {" + "onCreateResource(nodeId, JSON.stringify(resource))"
             + "        }," + "        async (nodeId, resource) => {"
@@ -38,20 +42,7 @@ public class WebnetesNode {
             + "        }" + "      );" + "window.webnetesNode.open(configYaml)")
     public static native void _open(String configYaml, OnCreateResourceHandler onCreateResource);
 
-    // public static void createResources(String resources, String nodeId) {
-
-    // }
-
-    // public static void deleteResources(String resources, String nodeId) {
-
-    // }
-
-    // public static void seedFile(String label, String name, String repository,
-    // String file) {
-
-    // }
-
-    // public static void close() {
-
-    // }
+    @JSBody(params = { "resources",
+            "nodeId" }, script = "window.webnetesNode && window.webnetesNode.createResources(resources, nodeId)")
+    public static native void _createResources(String resources, String nodeId);
 }

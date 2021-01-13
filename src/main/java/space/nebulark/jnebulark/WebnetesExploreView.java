@@ -6,6 +6,7 @@ import org.teavm.flavour.routing.Routing;
 import org.teavm.flavour.templates.BindTemplate;
 import org.teavm.jso.browser.Window;
 
+import space.nebulark.jnebulark.bindings.WebnetesNode;
 import space.nebulark.jnebulark.models.ClusterResource;
 import space.nebulark.jnebulark.stores.ClusterResourcesStore;
 
@@ -16,6 +17,16 @@ public class WebnetesExploreView {
     public boolean inviteVisible = true;
     public boolean firstTableVisible = false;
     public boolean secondTableVisible = false;
+
+    private String definition = "";
+
+    public void setDefinition(String newDefinition) {
+        this.definition = newDefinition;
+    }
+
+    public String getDefinition() {
+        return this.definition;
+    }
 
     public void openInExplore() {
         // Node.open("ey");
@@ -81,5 +92,11 @@ public class WebnetesExploreView {
 
     public Collection<ClusterResource> getResources() {
         return ClusterResourcesStore.getInstance().getAll();
+    }
+
+    public void createResources() {
+        WebnetesNode.createResources(this.definition, "localhost");
+
+        this.setCreateModalVisible();
     }
 }

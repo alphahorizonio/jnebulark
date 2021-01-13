@@ -248,6 +248,7 @@
          <code>
            <textarea
              class="resize-none border rounded-md w-full h-full mb-2 bg-gray-900 text-white"
+             html:value="definition" html:change="definition"
            >
 
            </textarea>
@@ -279,6 +280,7 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
        </button>
        <button
          class="px-4 bg-blue-500 p-2 rounded-lg text-white hover:bg-gray-100 hover:bg-blue-400"
+         event:click="createResources()"
        >
        Create Resource +
        </button>
