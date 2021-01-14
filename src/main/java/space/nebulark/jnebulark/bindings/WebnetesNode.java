@@ -15,6 +15,10 @@ public class WebnetesNode {
         WebnetesNode._open(resources, WebnetesNode.onCreateResource);
     }
 
+    public static void deleteRessources(String resources, String nodeId) {
+        WebnetesNode._deleteResources(resources, nodeId);
+    }
+
     public static void createResources(String resources, String nodeId) {
         WebnetesNode._createResources(resources, nodeId);
     }
@@ -45,4 +49,9 @@ public class WebnetesNode {
     @JSBody(params = { "resources",
             "nodeId" }, script = "window.webnetesNode && window.webnetesNode.createResources(resources, nodeId)")
     public static native void _createResources(String resources, String nodeId);
+
+    @JSBody(params = { "resources",
+            "nodeId" }, script = "window.webnetesNode && window.webnetesNode.deleteResources(resources, nodeId)")
+    public static native void _deleteResources(String resources, String nodeId);
+
 }

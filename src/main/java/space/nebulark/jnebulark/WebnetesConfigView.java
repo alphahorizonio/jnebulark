@@ -30,30 +30,18 @@ public class WebnetesConfigView {
     public void openNode() {
         WebnetesNode.initialize((String nodeId, String definition) -> ClusterResourcesStore.getInstance()
                 .addClusterResource(new ClusterResource(nodeId, definition)));
-
         WebnetesNode.open(this.config);
-    }
-
-    public void openInExplore() {
-        // Node.open("ey");
-    }
-
-    public void deleteResourcesInExplore() {
-        // Node.open("ey");
-    }
-
-    public void closeinExplore() {
-        // Node.open("ey");
-    }
-
-    public void seedInExplore() {
-        // Node.open("ey");
     }
 
     public void createResourceInExplore() {
         Window window = Window.current();
         String boy = window.getDocument().getElementById("create-box").getTitle();
         // Node.open(boy);
+    }
+
+    public void deleteResourceInExplore() {
+        Window window = Window.current();
+        String boy = window.getDocument().getElementById("create-box").getTitle();
     }
 
     public void toWebnetesOverview() {
@@ -91,21 +79,5 @@ public class WebnetesConfigView {
     public void setFileModalVisible() {
         boolean otherVisible = !fileVisible;
         this.fileVisible = otherVisible;
-    }
-
-    public String createRessources(String ressources) {
-        return ressources;
-    }
-
-    public void deleteRessources(String ressources) {
-        return;
-    }
-
-    public String open(String ressources) {
-        return ressources;
-    }
-
-    public String seedFile(String label, String name, String repository, Uint8Array fileInstance) {
-        return "seededFile";
     }
 }
