@@ -27,6 +27,10 @@ public class WebnetesNode {
         WebnetesNode._createResources(resources, nodeId);
     }
 
+    public static void close() {
+        WebnetesNode._close();
+    }
+
     @JSBody(params = { "configYaml", "onCreateResource" }, script = "window.webnetesNode = new WebnetesNode("
             + "        async (nodeId, resource) => {" + "onCreateResource(nodeId, JSON.stringify(resource))"
             + "        }," + "        async (nodeId, resource) => {"
@@ -61,4 +65,8 @@ public class WebnetesNode {
     @JSBody(params = { "label", "name", "repository",
             "fileInstance" }, script = "window.webnetesNode && window.webnetesNode.seedFile(label, name, repository, fileInstance)")
     public static native void _seedFile(String label, String name, String repository, String fileInstance);
+
+    @JSBody(params = { "label", "name", "repository",
+            "fileInstance" }, script = "window.webnetesNode && window.webnetesNode.close()")
+    public static native void _close();
 }

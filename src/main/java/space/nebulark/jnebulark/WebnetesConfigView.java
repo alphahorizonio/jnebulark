@@ -64,10 +64,19 @@ public class WebnetesConfigView {
         return this.config;
     }
 
+    public void closeAndOpenNode() {
+        closeNode();
+        openNode();
+    }
+
     public void openNode() {
         WebnetesNode.initialize((String nodeId, String definition) -> ClusterResourcesStore.getInstance()
                 .addClusterResource(new ClusterResource(nodeId, definition)));
         WebnetesNode.open(this.config);
+    }
+
+    public void closeNode() {
+        WebnetesNode.close();
     }
 
     public void createResourceInExplore() {
