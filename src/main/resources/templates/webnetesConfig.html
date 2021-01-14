@@ -390,21 +390,23 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
                  >
                </div>
              </div>
-             <input type="file" class="h-full w-full opacity-0" name="" />
+             <input type="file" class="h-full w-full opacity-0" name="file" html:value="fileInstance" html:change="fileInstance"/>
            </div>
          </div>
        </div>
      </div>
 
      <label class="text-white font-bold"><span class="text-red-600">*</span> Label <i class="far fa-question-circle"></i></label>
-     <input type='text' placeholder="myfile" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500" />
+     <input type='text' placeholder="myfile" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500"  html:value="label" html:change="label"/>
 
      <label class="text-white font-bold"><span class="text-red-600">*</span> Name <i class="far fa-question-circle"></i></label>
-     <input type='text' placeholder="My File" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500" />
+     <input type='text' placeholder="My File" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500"  html:value="name" html:change="name"/>
 
      <label class="text-white font-bold"><span class="text-red-600">*</span> Repo <i class="far fa-question-circle"></i></label>
-     <select class="w-full border bg-gray-900 text-white rounded px-3 py-2 outline-none mt-4">
+     <select class="w-full border bg-gray-900 text-white rounded px-3 py-2 outline-none mt-4"  html:value="repository" html:change="repository">
        <option class="py-1">No matching repos found</option>
+       <option class="py-1">Repo 1</option>
+       <option class="py-1">Repo 2</option>
    </select>
 
      <p class="text-white text-lg mt-4">
@@ -421,6 +423,7 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
        </button>
        <button
          class="px-4 bg-blue-500 p-2 rounded-lg text-white hover:bg-gray-100 hover:bg-blue-400"
+         event:click="seedFileInExplore()"
        >
          Create File +
        </button>

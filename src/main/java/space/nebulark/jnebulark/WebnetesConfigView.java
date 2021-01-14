@@ -19,6 +19,43 @@ public class WebnetesConfigView {
 
     public String config = DefaultFormValues.DEFAULT_NODE_CONFIG;
 
+    public String label = "";
+    public String name = "";
+    public String repository = "";
+    public String fileInstance = "";
+
+    public void setLabel(String newLabel) {
+        this.label = newLabel;
+    }
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setRepository(String newRepository) {
+        this.repository = newRepository;
+    }
+
+    public String getRepository() {
+        return this.repository;
+    }
+
+    public void setFileinstance(String newFileinstance) {
+        this.fileInstance = newFileinstance;
+    }
+
+    public String getFileInstance() {
+        return this.fileInstance;
+    }
+
     public void setConfig(String newConfig) {
         this.config = newConfig;
     }
@@ -42,6 +79,10 @@ public class WebnetesConfigView {
     public void deleteResourceInExplore() {
         Window window = Window.current();
         String boy = window.getDocument().getElementById("create-box").getTitle();
+    }
+
+    public void seedFileInExplore(String label, String name, String repository, String fileInstance) {
+        WebnetesNode.seedFile(label, name, repository, fileInstance);
     }
 
     public void toWebnetesOverview() {
