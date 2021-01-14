@@ -21,12 +21,6 @@ public interface IRoute extends Route {
     @Path("/recentSparkDetails")
     void recentSparkDetails();
 
-    @Path("/old/webnetesLanding")
-    void webnetesLanding();
-
-    @Path("/old/webnetesDashboard")
-    void webnetesDashboard();
-
     @Path("/webnetesConfig")
     void webnetesConfig();
 
