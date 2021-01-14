@@ -15,6 +15,7 @@ public class WebnetesConfigView {
     public boolean createVisible = true;
     public boolean fileVisible = true;
     public boolean inviteVisible = true;
+    public boolean terminalVisible = true;
 
     public String config = DefaultFormValues.DEFAULT_NODE_CONFIG;
 
@@ -70,6 +71,11 @@ public class WebnetesConfigView {
     public void toCluster() {
         Window window = Window.current();
         window.getLocation().replace("https://webnetesctl.vercel.app/");
+    }
+
+    public void toggleTerminalVisibility() {
+        boolean otherVisible = !terminalVisible;
+        this.terminalVisible = otherVisible;
     }
 
     public void setCreateModalVisible() {
