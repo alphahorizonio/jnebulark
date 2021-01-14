@@ -19,26 +19,6 @@ public class Client extends ApplicationTemplate implements IRoute {
     }
 
     @Override
-    public void missionControl() {
-        setView(new MissionControlView());
-    }
-
-    @Override
-    public void dashboard() {
-        setView(new DashboardView());
-    }
-
-    @Override
-    public void sparkDetails() {
-        setView(new SparkDetailsView());
-    }
-
-    @Override
-    public void recentSparkDetails() {
-        setView(new RecentSparkDetailsView());
-    }
-
-    @Override
     public void webnetesConfig() {
         setView(new WebnetesConfigView());
     }

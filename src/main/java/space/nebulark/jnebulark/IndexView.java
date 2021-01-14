@@ -8,11 +8,6 @@ public class IndexView {
 
     private String nebulaID = "";
 
-    public void next() {
-        System.out.println("New Nebula");
-        Routing.open(IRoute.class).missionControl();
-    }
-
     public String getNebulaID() {
         System.out.println(nebulaID);
         return nebulaID;
