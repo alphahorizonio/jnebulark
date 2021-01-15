@@ -66,7 +66,6 @@ public class WebnetesNode {
             "fileInstance" }, script = "window.webnetesNode && window.webnetesNode.seedFile(label, name, repository, fileInstance)")
     public static native void _seedFile(String label, String name, String repository, String fileInstance);
 
-    @JSBody(params = { "label", "name", "repository",
-            "fileInstance" }, script = "window.webnetesNode && window.webnetesNode.close()")
+    @JSBody(params = {}, script = "window.webnetesNode && window.webnetesNode.close()")
     public static native void _close();
 }
