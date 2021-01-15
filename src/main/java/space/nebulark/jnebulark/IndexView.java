@@ -6,19 +6,14 @@ import org.teavm.flavour.templates.BindTemplate;
 @BindTemplate("templates/index.html")
 public class IndexView {
 
-    private String nebulaID = "";
+    private String clusterID = "";
 
-    public void next() {
-        System.out.println("New Nebula");
-        Routing.open(IRoute.class).missionControl();
+    public String getClusterID() {
+        System.out.println(clusterID);
+        return clusterID;
     }
 
-    public String getNebulaID() {
-        System.out.println(nebulaID);
-        return nebulaID;
-    }
-
-    public void setNebulaID(String nebulaID) {
-        this.nebulaID = nebulaID;
+    public void setClusterID(String clusterID) {
+        this.clusterID = clusterID;
     }
 }

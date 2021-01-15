@@ -71,7 +71,7 @@
               >
                 <div class="dropdown outline-none w--1" tabindex="0">
                   <p
-                    class="text-white w-20 bg-blue-500 text-white py-2 rounded font-bold"
+                    class="text-white w-20 bg-blue-500 text-white py-2 rounded font-bold  hover:blue-700"
                 
                   >
                     Create +
@@ -107,7 +107,7 @@
             event:click="setInviteModalVisible()"
           >
             <div
-              class="flex flex-row items-center w-20 bg-gray-800 text-white py-2 border-2 border-blue-500 rounded font-bold"
+              class="flex flex-row items-center w-20 bg-gray-800 text-white py-2 border-2 border-blue-500 rounded font-bold  hover:blue-700"
             >
               <i class="fas fa-handshake ml-3"></i>
               <p class="text-white ml-1">Invite</p>
@@ -183,6 +183,65 @@
          class="px-4 bg-blue-500 p-2 rounded-lg text-white hover:bg-gray-100 hover:bg-blue-400"
        >
          Done
+       </button>
+     </div>
+   </div>
+ </div>
+</div>
+
+<!--Terminal Modal-->
+<div
+ class="fixed w-full h-full top-0 left-0 flex items-center justify-center"
+ attr:style="'display: ' + (terminalVisible ? 'none' : '')" 
+>
+ <div
+   class="absolute w-full h-full bg-gray-900 opacity-50"
+ ></div>
+
+ <div
+   class="bg-gray-800 border-2 border-indigo-100 w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
+ >
+   <div
+     class="absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50"
+   >
+     <svg
+       class="fill-current text-white"
+       xmlns="http://www.w3.org/2000/svg"
+       width="18"
+       height="18"
+       viewBox="0 0 18 18"
+     >
+       <path
+         d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+       ></path>
+     </svg>
+   </div>
+
+   <div class="py-4 text-left px-3">
+     <div class="flex justify-between items-center pb-3">
+       <p class="text-2xl font-bold text-white">
+         <i class="fas fa-cube"></i> Terminal
+       </p>
+     </div>
+
+     <div class="flex flex-col items-center bg-gray-900">
+       <div class="w-full h-96">
+         <code>
+           <textarea
+             class="resize-none border rounded-md w-full h-full mb-2 bg-gray-900 text-white"
+           >
+
+           </textarea>
+         </code>
+       </div>
+     </div>
+
+
+     <div class="flex justify-center pt-2">
+       <button
+         class="px-4 p-2 bg-transparent rounded-lg text-blue-500 hover:text-blue-400 mr-2"
+         event:click="toggleTerminalVisibility()"          >
+         Close
        </button>
      </div>
    </div>
@@ -331,21 +390,23 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
                  >
                </div>
              </div>
-             <input type="file" class="h-full w-full opacity-0" name="" />
+             <input type="file" class="h-full w-full opacity-0" name="file" html:value="fileInstance" html:change="fileInstance"/>
            </div>
          </div>
        </div>
      </div>
 
      <label class="text-white font-bold"><span class="text-red-600">*</span> Label <i class="far fa-question-circle"></i></label>
-     <input type='text' placeholder="myfile" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500" />
+     <input type='text' placeholder="myfile" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500"  html:value="label" html:change="label"/>
 
      <label class="text-white font-bold"><span class="text-red-600">*</span> Name <i class="far fa-question-circle"></i></label>
-     <input type='text' placeholder="My File" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500" />
+     <input type='text' placeholder="My File" class="w-full mt-2 mb-6 px-4 py-2 border rounded-lg text-gray-900 focus:outline-none focus:border-blue-500"  html:value="name" html:change="name"/>
 
      <label class="text-white font-bold"><span class="text-red-600">*</span> Repo <i class="far fa-question-circle"></i></label>
-     <select class="w-full border bg-gray-900 text-white rounded px-3 py-2 outline-none mt-4">
+     <select class="w-full border bg-gray-900 text-white rounded px-3 py-2 outline-none mt-4"  html:value="repository" html:change="repository">
        <option class="py-1">No matching repos found</option>
+       <option class="py-1">Repo 1</option>
+       <option class="py-1">Repo 2</option>
    </select>
 
      <p class="text-white text-lg mt-4">
@@ -362,6 +423,7 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
        </button>
        <button
          class="px-4 bg-blue-500 p-2 rounded-lg text-white hover:bg-gray-100 hover:bg-blue-400"
+         event:click="seedFileInExplore(label, name, repository, fileInstance)"
        >
          Create File +
        </button>
@@ -369,6 +431,8 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
    </div>
  </div>
 </div>
+
+
 
 
   <!--Website content-->
@@ -441,10 +505,10 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
   <div class="flex flex-row w-full justify-between items-center p-12">
     <h1 class="text-4xl text-white font-bold">Node Config</h1>
     <div
-      class="flex flex-row items-center w-40 bg-gray-800 text-white py-2 border-2 border-blue-500 rounded font-bold"
+      class="flex flex-row items-center w-40 bg-gray-800 text-white py-2 border-2 border-blue-500 rounded font-bold  hover:blue-700"
     >
       <i class="fas fa-save ml-3"></i>
-      <p class="text-white ml-1" event:click="openNode()">Apply & Reload</p>
+      <p class="text-white ml-1" event:click="closeAndOpenNode()">Apply & Reload</p>
     </div>
   </div>
   <div class="flex flex-col items-center bg-gray-900">
@@ -466,6 +530,11 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
     </p>
  
   </div>
+
+  <button
+                class="float p-0 w-16 h-16 bg-blue-600 rounded-full hover:blue-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"   event:click="toggleTerminalVisibility()">
+                <i class="fas fa-share-alt-square text-xl text-white"></i>
+        </button>
 </div>
 
 <style>
@@ -474,51 +543,3 @@ Explorer <i class="fas fa-external-link-alt"></i>.</a></span>
   }
 </style>
 
-<script>
-  //HamburgerMenu
-  let hamburger = document.getElementById("hamburgerbtn");
-
-  let mobileMenu = document.getElementById("mobileMenu");
-
-  hamburger?.addEventListener("click", function () {
-    mobileMenu.classList.toggle("active");
-  });
-
-  var openmodal = document.querySelectorAll(".modal-open");
-  for (var i = 0; i < openmodal.length; i++) {
-    openmodal[i]?.addEventListener("click", function (event) {
-      event.preventDefault();
-      toggleModal();
-    });
-  }
-
-  //Modal
-  const overlay = document.querySelector(".modal-overlay");
-  overlay?.addEventListener("click", toggleModal);
-
-  var closemodal = document.querySelectorAll(".modal-close");
-  for (var i = 0; i < closemodal.length; i++) {
-    closemodal[i]?.addEventListener("click", toggleModal);
-  }
-
-  document.onkeydown = function (evt) {
-    evt = evt || window.event;
-    var isEscape = false;
-    if ("key" in evt) {
-      isEscape = evt.key === "Escape" || evt.key === "Esc";
-    } else {
-      isEscape = evt.keyCode === 27;
-    }
-    if (isEscape && document.body.classList.contains("modal-active")) {
-      toggleModal();
-    }
-  };
-
-  function toggleModal() {
-    const body = document.querySelector("body");
-    const modal = document.querySelector(".modal");
-    modal.classList.toggle("opacity-0");
-    modal.classList.toggle("pointer-events-none");
-    body.classList.toggle("modal-active");
-  }
-</script>

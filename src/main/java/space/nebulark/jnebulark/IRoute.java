@@ -9,24 +9,6 @@ public interface IRoute extends Route {
     @Path("/")
     void index();
 
-    @Path("/missionControl")
-    void missionControl();
-
-    @Path("/dashboard")
-    void dashboard();
-
-    @Path("/sparkDetails")
-    void sparkDetails();
-
-    @Path("/recentSparkDetails")
-    void recentSparkDetails();
-
-    @Path("/old/webnetesLanding")
-    void webnetesLanding();
-
-    @Path("/old/webnetesDashboard")
-    void webnetesDashboard();
-
     @Path("/webnetesConfig")
     void webnetesConfig();
 

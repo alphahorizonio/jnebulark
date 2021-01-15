@@ -59,6 +59,13 @@ input {
   height: 100vh;
 }
 
+.start-background {
+  background-image: url("https://images.wallpaperscraft.com/image/horizon_sea_sunset_120525_5395x3597.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .modal {
   transition: opacity 0.25s ease;
 }
@@ -70,4 +77,12 @@ input {
 body.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
 }
